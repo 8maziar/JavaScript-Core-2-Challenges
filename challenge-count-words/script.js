@@ -1,7 +1,13 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
-
-  // Write your code in here
+  if (!chapterOfABook) return {};
+  chapterOfABook.split(" ").forEach((x) => {
+    if (x in wordCount) {
+      wordCount[x]++;
+    } else {
+      wordCount[x] = 1;
+    }
+  });
 
   return wordCount;
 }
